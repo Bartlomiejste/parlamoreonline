@@ -1,11 +1,11 @@
 <?php
 return [
-  'h2' => 'Un’offerta che si adatta alla tua vita',
-  'lead' => 'Scegli il formato che ti dà costanza e progressi concreti nel parlare.',
+  'h2' => 'Un’offerta pensata per te',
+  'lead' => 'Scegli la formula che ti garantisce continuità e veri progressi nel parlato.',
   'cta' => 'Vai all’offerta',
   'cards' => [
-    ['title'=>'Piccoli gruppi', 'text'=>'2–5 persone. Tanta conversazione, role-play, progressi veloci e motivazione.'],
-    ['title'=>'Lezioni 1:1', 'text'=>'Per obiettivi specifici: lavoro, trasferimento, start intensivo.'],
-    ['title'=>'Conversazioni a tema', 'text'=>'Parlare senza la pressione della perfezione: situazioni reali e lavorative.'],
+    ['title'=>'Corso individuale', 'text'=>'Lezioni individuali al 100% personalizzate in base alle tue esigenze e al tuo ritmo di apprendimento.'],
+    ['title'=>'Corso in coppia', 'text'=>'Lezioni in due — ideali per amici, partner o fratelli.'],
+    ['title'=>'Corso di gruppo', 'text'=>'Piccoli gruppi (3–6 persone) che favoriscono la conversazione attiva.'],
   ],
 ];

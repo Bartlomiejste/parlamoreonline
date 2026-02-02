@@ -1,33 +1,37 @@
-<section class="bg-blush/40 border-y border-stone/30">
-    <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10">
-        <div>
-            <h2 class="font-title text-3xl">{{ __('forwho.h2') }}</h2>
-            <p class="mt-3 text-ink/80">{{ __('forwho.lead') }}</p>
+<section class="bg-blush/40 border-y border-stone/30" aria-labelledby="forwho-title">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
 
-            <ul class="mt-6 grid gap-3">
-                @foreach (__('forwho.bullets') as $b)
-                    <li class="flex gap-3 items-start">
-                        <span class="mt-2 h-3 w-3 rounded-full bg-accent"></span>
-                        <span class="text-ink/80">{{ $b }}</span>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
+            {{-- LEWA: TEKST --}}
+            <div>
+                <h2 id="forwho-title" class="font-title text-3xl font-bold">
+                    {{ __('forwho.h2') }}
+                </h2>
 
-        <div class="rounded-[2rem] bg-snow border border-stone/30 p-8 shadow">
-            <div class="font-semibold">{{ __('forwho.box_title') }}</div>
-            <p class="mt-3 text-ink/80">{{ __('forwho.box_text') }}</p>
+                <p class="mt-4 text-ink/80 text-lg">
+                    {{ __('forwho.lead') }}
+                </p>
 
-            <div class="mt-6 flex flex-wrap gap-3">
-                <a class="px-5 py-3 rounded-2xl bg-accent text-white font-semibold shadow hover:opacity-95"
-                    href="{{ url('/' . app()->getLocale() . '/' . __('routes.contact')) }}">
-                    {{ __('forwho.cta') }}
-                </a>
-                <a class="px-5 py-3 rounded-2xl bg-bg border border-stone/30 font-semibold hover:border-accent"
-                    href="{{ url('/' . app()->getLocale() . '/' . __('routes.offer')) }}">
-                    {{ __('forwho.cta2') }}
-                </a>
+                <ul class="mt-8 grid gap-4">
+                    @foreach (__('forwho.bullets') as $b)
+                        <li class="flex gap-3 items-start">
+                            <span class="mt-2 h-3 w-3 rounded-full bg-accent flex-shrink-0" aria-hidden="true"></span>
+                            <span class="text-ink/80 leading-relaxed">
+                                {{ $b }}
+                            </span>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
+
+            {{-- PRAWA: OBRAZ --}}
+            <div class="relative">
+                <figure class="overflow-hidden rounded-[2rem] border border-stone/30 shadow">
+                    <img src="{{ asset('assets/forwho/forwho.png') }}" alt="{{ __('forwho.image_alt') }}"
+                        class="w-full h-auto object-cover" loading="lazy">
+                </figure>
+            </div>
+
         </div>
     </div>
 </section>

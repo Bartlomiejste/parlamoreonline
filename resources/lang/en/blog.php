@@ -41,9 +41,9 @@ return [
       'meta_title' => 'Break the speaking barrier — 3 practical steps | Parlamore Online',
       'meta_description' => 'A practical plan to break the speaking barrier: short sentences, role-plays and feedback that doesn’t block your flow.',
       'content' => [
-        'Step 1: build short sentences and reuse them in different contexts.',
-        'Step 2: practise role-plays (work, shop, phone calls) — speaking becomes automatic.',
-        'Step 3: live feedback. Corrections should help, not stress you out.',
+        'Step 1: Build short sentences and reuse them in different contexts.',
+        'Step 2: Practise role-plays (work, shop, phone calls) — speaking becomes automatic.',
+        'Step 3: Live feedback. Corrections should help, not stress you out.',
       ],
     ],
   ],

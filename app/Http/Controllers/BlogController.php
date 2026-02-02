@@ -1,21 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\App;
 
 class BlogController extends Controller
 {
     public function index(Request $request, string $locale)
     {
+        App::setLocale($locale);
+
         $posts = $this->posts($locale);
 
-        $title = __("seo.blog.title");
-        $desc  = __("seo.blog.description");
+        $title = (string) __('seo.blog.title');
+        $desc  = (string) __('seo.blog.description');
         $canonical = url()->current();
 
         $alternates = [];
-        foreach (config('seo.locales') as $loc) {
+        foreach (config('seo.locales', ['pl', 'en', 'it']) as $loc) {
             $alternates[$loc] = url("/{$loc}/blog");
         }
 
@@ -24,28 +30,32 @@ class BlogController extends Controller
 
     public function show(Request $request, string $locale, string $id, ?string $slug = null)
     {
+        App::setLocale($locale);
+
         $posts = $this->posts($locale);
-        $post = collect($posts)->firstWhere('id', $id);
+        $post = Arr::first($posts, fn ($p) => (string) ($p['id'] ?? '') === (string) $id);
 
         abort_if(!$post, 404);
 
-        // Jeśli slug w URL jest inny niż "slug" w danym języku, rób 301 na poprawny (SEO)
-        $correctSlug = $post['slug'];
-        if ($slug !== $correctSlug) {
+        // Canonical slug enforcement (SEO): redirect only when slug is provided and different
+        $correctSlug = (string) ($post['slug'] ?? '');
+        if ($correctSlug !== '' && $slug !== null && $slug !== $correctSlug) {
             return redirect()->to(url("/{$locale}/blog/{$id}-{$correctSlug}"), 301);
         }
 
-        $title = $post['meta_title'];
-        $desc  = $post['meta_description'];
-        $canonical = url("/{$locale}/blog/{$id}-{$correctSlug}");
+        $title = (string) ($post['meta_title'] ?? $post['title'] ?? __('seo.blog.post_fallback_title'));
+        $desc  = (string) ($post['meta_description'] ?? $post['excerpt'] ?? '');
+        $canonical = $correctSlug !== ''
+            ? url("/{$locale}/blog/{$id}-{$correctSlug}")
+            : url("/{$locale}/blog");
 
         $alternates = [];
-        foreach (config('seo.locales') as $loc) {
+        foreach (config('seo.locales', ['pl', 'en', 'it']) as $loc) {
             $targetPosts = $this->posts($loc);
-            $target = collect($targetPosts)->firstWhere('id', $id);
+            $target = Arr::first($targetPosts, fn ($p) => (string) ($p['id'] ?? '') === (string) $id);
 
-            // jeśli z jakiegoś powodu brak tłumaczenia wpisu w danym języku -> fallback na index bloga
-            $alternates[$loc] = $target
+            // If no translation exists in target locale -> fallback to blog index
+            $alternates[$loc] = (is_array($target) && !empty($target['slug']))
                 ? url("/{$loc}/blog/{$id}-{$target['slug']}")
                 : url("/{$loc}/blog");
         }
@@ -55,6 +65,11 @@ class BlogController extends Controller
 
     private function posts(string $locale): array
     {
-        return __("blog.posts");
+        // Ensure we read posts in the requested locale
+        App::setLocale($locale);
+
+        $posts = trans('blog.posts', [], $locale);
+
+        return is_array($posts) ? $posts : [];
     }
 }

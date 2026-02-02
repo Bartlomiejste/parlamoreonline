@@ -1,13 +1,35 @@
 <?php
 return [
   'h1' => 'FAQ',
-  'lead' => 'Domande frequenti sulle lezioni online.',
+  'lead' => 'Le domande più frequenti sulle lezioni online.',
   'items' => [
-    ['q'=>'Devo conoscere le basi?', 'a'=>'No. Ci sono gruppi da zero e per principianti. Partiamo da frasi brevi e iniziamo subito a parlare.'],
-    ['q'=>'Come sono le lezioni online?', 'a'=>'Ci vediamo su Zoom/Google Meet. Lavoriamo con materiali condivisi, role-play e esercizi pratici.'],
-    ['q'=>'Quante persone ci sono nel gruppo?', 'a'=>'Di solito 2–5 persone, così tutti parlano molto e ricevono feedback.'],
-    ['q'=>'Riceverò materiali?', 'a'=>'Sì. Materiali + breve riassunto dopo lezione, vocabolario in frasi e mini compito da 10 minuti.'],
-    ['q'=>'Posso cambiare gruppo se il livello non è giusto?', 'a'=>'Sì. Dopo 1–2 incontri possiamo regolare il gruppo per un ritmo perfetto.'],
-    ['q'=>'Le lezioni sono disponibili in polacco, inglese e italiano?', 'a'=>'Sì. Il sito è in PL/EN/IT e durante la lezione adattiamo la lingua di supporto al tuo livello.'],
+    [
+      'q' => 'Le lezioni si svolgono online?',
+      'a' => 'Sì, tutte le lezioni si svolgono online. Questo ti permette di studiare da qualsiasi parte del mondo — senza spostamenti e orari rigidi.'
+    ],
+    [
+      'q' => 'Da quale livello posso iniziare?',
+      'a' => 'Lavoro con studenti di diversi livelli, anche principianti assoluti. Prima di iniziare le lezioni, fissiamo una breve chiamata di valutazione per scegliere il corso più adatto alle tue esigenze.'
+    ],
+    [
+      'q' => 'In quali lingue tieni le lezioni?',
+      'a' => 'Tengo le lezioni in polacco, italiano o inglese — a seconda delle tue esigenze e del tuo livello linguistico.'
+    ],
+    [
+      'q' => 'Con quale frequenza si tengono le lezioni?',
+      'a' => 'La frequenza delle lezioni viene stabilita individualmente, in base ai tuoi obiettivi, alla tua disponibilità e al ritmo di apprendimento preferito.'
+    ],
+    [
+      'q' => 'Su quale piattaforma si svolgono le lezioni?',
+      'a' => 'Le lezioni si svolgono sulla piattaforma Zoom. È sufficiente una connessione internet stabile e un computer o tablet.'
+    ],
+    [
+      'q' => 'Come posso iscrivermi?',
+      'a' => 'Basta contattarmi tramite il modulo di contatto o un messaggio. In seguito fissiamo una breve chiamata di valutazione e scegliamo insieme la formula di lezioni migliore.'
+    ],
+    [
+      'q' => 'Offri una lezione di prova o una chiamata introduttiva?',
+      'a' => 'Sì — prima di iniziare il corso fissiamo una breve chiamata introduttiva, durante la quale conosciamo i tuoi obiettivi, bisogni e aspettative.'
+    ],
   ],
 ];

@@ -41,9 +41,9 @@ return [
       'meta_title' => 'Superare il blocco nel parlare — 3 passaggi | Parlamore Online',
       'meta_description' => 'Piano pratico per superare il blocco nel parlare: frasi brevi, role-play e feedback che non interrompe il flusso.',
       'content' => [
-        'Passo 1: costruisci frasi brevi e riusale in contesti diversi.',
-        'Passo 2: role-play (lavoro, negozio, telefonate) — parlare diventa automatico.',
-        'Passo 3: feedback in diretta. Le correzioni devono aiutare, non stressare.',
+        'Passo 1: Costruisci frasi brevi e riusale in contesti diversi.',
+        'Passo 2: Role-play (lavoro, negozio, telefonate) — parlare diventa automatico.',
+        'Passo 3: Feedback in diretta. Le correzioni devono aiutare, non stressare.',
       ],
     ],
   ],

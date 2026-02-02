@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PageController extends Controller
 {
@@ -38,15 +41,18 @@ class PageController extends Controller
 
     private function sharedSeo(string $locale, string $page): array
     {
-        $title = __("seo.$page.title");
-        $desc  = __("seo.$page.description");
+        // Upewniamy się, że tłumaczenia lecą z właściwego locale (jeśli middleware nie zadziałał)
+        App::setLocale($locale);
+
+        $title = (string) __("seo.$page.title");
+        $desc  = (string) __("seo.$page.description");
 
         // canonical = aktualny url (bez query)
         $canonical = url()->current();
 
         // alternate hreflang links
         $alternates = [];
-        foreach (config('seo.locales') as $loc) {
+        foreach (config('seo.locales', ['pl', 'en', 'it']) as $loc) {
             $alternates[$loc] = $this->localizedUrl($loc, $page);
         }
 
@@ -55,18 +61,25 @@ class PageController extends Controller
 
     private function localizedUrl(string $locale, string $page): string
     {
-        // map page => localized path
-        $map = [
-            'home'    => '',
-            'about'   => $locale === 'pl' ? 'o-mnie' : ($locale === 'en' ? 'about' : 'chi-sono'),
-            'offer'   => $locale === 'pl' ? 'oferta' : ($locale === 'en' ? 'offer' : 'offerta'),
-            'faq'     => 'faq',
-            'reviews' => $locale === 'pl' ? 'opinie' : ($locale === 'en' ? 'reviews' : 'recensioni'),
-            'contact' => $locale === 'pl' ? 'kontakt' : ($locale === 'en' ? 'contact' : 'contatto'),
-            'blog'    => 'blog',
-        ];
+        // map page => localized path (using translations instead of hardcode)
+        if ($page === 'home') {
+            return url("/{$locale}");
+        }
 
-        $path = $map[$page] ?? '';
-        return url("/{$locale}" . ($path !== '' ? "/{$path}" : ""));
+        if ($page === 'faq') {
+            return url("/{$locale}/faq");
+        }
+
+        if ($page === 'blog') {
+            return url("/{$locale}/blog");
+        }
+
+        if (in_array($page, ['about', 'offer', 'reviews', 'contact'], true)) {
+            $slug = trim((string) trans("routes.{$page}", [], $locale), '/');
+            return $slug !== '' ? url("/{$locale}/{$slug}") : url("/{$locale}");
+        }
+
+        // fallback
+        return url("/{$locale}");
     }
 }

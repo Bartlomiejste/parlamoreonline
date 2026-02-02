@@ -41,9 +41,9 @@ return [
       'meta_title' => 'Jak przełamać barierę mówienia — 3 kroki | Parlamore Online',
       'meta_description' => 'Praktyczny plan przełamywania bariery mówienia: krótkie zdania, scenki i feedback, który nie blokuje rozmowy.',
       'content' => [
-        'Krok 1: buduj krótkie zdania i powtarzaj je w różnych kontekstach.',
-        'Krok 2: ćwicz scenki (praca, sklep, telefon) — mówienie staje się automatyczne.',
-        'Krok 3: feedback na bieżąco. Poprawki mają pomagać, a nie stresować.',
+        'Krok 1: Buduj krótkie zdania i powtarzaj je w różnych kontekstach.',
+        'Krok 2: Ćwicz scenki (praca, sklep, telefon) — mówienie staje się automatyczne.',
+        'Krok 3: Feedback na bieżąco. Poprawki mają pomagać, a nie stresować.',
       ],
     ],
   ],

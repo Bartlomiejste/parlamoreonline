@@ -1,11 +1,11 @@
 <?php
 return [
   'h2' => 'How the lessons work',
-  'lead' => 'Simple, practical and human — without overload, but with a clear system.',
+  'lead' => 'Short, practical, and human — without overload, but with a clear system.',
   'steps' => [
-    ['title'=>'Quick goal check', 'text'=>'We define why you need the language and where it must work.'],
-    ['title'=>'Weekly plan', 'text'=>'Aligned with your time, lifestyle and level.'],
-    ['title'=>'70% speaking', 'text'=>'Conversations, role-plays, live feedback — without stopping your flow.'],
-    ['title'=>'After-class reinforcement', 'text'=>'Short notes, vocabulary in sentences and a 10-minute task.'],
+    ['title'=>'Goal diagnosis', 'text'=>'We define why you need the language and in which situations it should work for you.'],
+    ['title'=>'Weekly plan', 'text'=>'Tailored to your time, lifestyle, and level.'],
+    ['title'=>'Lessons: 70% speaking', 'text'=>'Conversations, role-plays, live feedback — without interrupting the flow.'],
+    ['title'=>'After the lesson: reinforcement', 'text'=>'Notes, vocabulary in context, and a 10-minute task.'],
   ],
 ];

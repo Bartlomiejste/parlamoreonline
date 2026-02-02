@@ -1,2 +1,22 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Block sensitive / non-public paths (safe even if they don't exist)
+Disallow: /app/
+Disallow: /vendor/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /storage/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /routes/
+Disallow: /resources/
+Disallow: /node_modules/
+Disallow: /backup/
+Disallow: /logs/
+
+# Optional: block query URLs (if you ever add filters/params)
+Disallow: /*?
+
+Sitemap: https://parlamoreonline.com/sitemap.xml

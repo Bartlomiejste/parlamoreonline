@@ -10,6 +10,9 @@
 
     <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
 
+    <meta name="robots" content="{{ $robots ?? 'index,follow,max-image-preview:large' }}">
+    <meta name="theme-color" content="{{ config('seo.theme_color', '#ffffff') }}">
+
     {{-- hreflang --}}
     @if (!empty($alternates))
         @foreach ($alternates as $loc => $href)
@@ -25,6 +28,15 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
     <meta property="og:image" content="{{ asset(config('seo.default_images.og')) }}">
+    <meta property="og:locale" content="{{ str_replace('-', '_', app()->getLocale()) }}">
+
+    @if (!empty($alternates))
+        @foreach (array_keys($alternates) as $loc)
+            @if ($loc !== app()->getLocale())
+                <meta property="og:locale:alternate" content="{{ str_replace('-', '_', $loc) }}">
+            @endif
+        @endforeach
+    @endif
 
     {{-- Twitter --}}
     <meta name="twitter:card" content="summary_large_image">
@@ -32,12 +44,15 @@
     <meta name="twitter:description" content="{{ $desc ?? '' }}">
     <meta name="twitter:image" content="{{ asset(config('seo.default_images.og')) }}">
 
+    @if (config('seo.social.twitter'))
+        <meta name="twitter:site" content="{{ config('seo.social.twitter') }}">
+    @endif
+
     {{-- Favicon --}}
     <link rel="icon" href="{{ asset('/favicon.png') }}" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon-16x16.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('/apple-touch-icon.png') }}">
-
     <link rel="manifest" href="{{ asset('/site.webmanifest') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -51,7 +66,7 @@
 
     @include('partials.header')
 
-    <main id="main">
+    <main id="main" role="main">
         @yield('content')
     </main>
 

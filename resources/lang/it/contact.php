@@ -1,27 +1,29 @@
 <?php
+
 return [
-  'h1' => 'Contatto',
-  'lead' => 'Scrivimi: ti aiuto a scegliere il livello e il formato migliore.',
-  'box_title' => 'Cosa scrivere nel messaggio',
+  'h1' => 'Contatti',
+  'lead' => 'Hai domande o vuoi prenotare una lezione?',
+  'left_text' => 'Compila il modulo e ti ricontatterò il prima possibile, così potremo adattare le lezioni alle tue esigenze.',
+
+  'box_title' => 'Cosa è utile scrivere nel messaggio?',
   'box_bullets' => [
-    'Quale lingua: italiano o polacco (o entrambe).',
-    'Il tuo livello (se lo conosci) e il tuo obiettivo.',
-    'Disponibilità (giorni/orari) e preferenza: gruppo o 1:1.',
+    'La lingua che ti interessa: italiano o polacco (o entrambe).',
+    'Il tuo livello (se lo conosci) e il tuo obiettivo di apprendimento.',
+    'Il tipo di corso preferito e la tua disponibilità (giorni/orari).',
   ],
+
   'form' => [
     'name' => 'Nome',
-    'email' => 'Email',
-    'language' => 'Lingua preferita per il contatto',
+    'email' => 'E-mail',
+    'course_type' => 'Tipo di corso',
+    'course_individual' => 'Individuale',
+    'course_pair' => 'In coppia',
+    'course_group' => 'In gruppo',
     'choose' => 'Scegli',
-    'level' => 'Livello',
-    'level_ph' => 'es. A1 / A2 / B1 (opzionale)',
-    'goal' => 'Obiettivo',
-    'goal_ph' => 'es. lavoro, trasferimento, conversazione',
-    'availability' => 'Disponibilità',
-    'availability_ph' => 'es. Mar/Ven dopo le 18:00',
     'message' => 'Messaggio',
-    'send' => 'Invia',
-    'privacy' => 'Inviando un messaggio accetti di essere contattato/a per le lezioni.',
+    'send' => 'Invia messaggio',
+    'privacy' => 'Inviando il messaggio, acconsenti a essere ricontattato/a in merito alle lezioni.',
   ],
-  'sent_ok' => 'Grazie! Il messaggio è stato inviato. Ti risponderò appena possibile.',
+
+  'sent_ok' => 'Grazie! Il messaggio è stato inviato correttamente. Ti risponderò il prima possibile.',
 ];

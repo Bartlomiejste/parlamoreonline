@@ -1,15 +1,12 @@
 <?php
 return [
-  'h2' => 'Per chi è?',
-  'lead' => 'Se vivi all’estero o vuoi una lingua che funzioni nella vita reale — sei nel posto giusto.',
+  'h2' => 'A chi sono rivolte queste lezioni?',
+  'lead' => 'Le mie lezioni sono pensate per chi desidera:',
   'bullets' => [
-    'Vivi all’estero e vuoi parlare con sicurezza ogni giorno.',
-    'Sei in una relazione internazionale e vuoi comunicare meglio.',
-    'Vuoi superare il blocco nel parlare e sentirti più tranquillo/a.',
-    'Ti serve una lingua pratica per lavoro, riunioni e vita quotidiana.',
+    'Parlare con sicurezza in polacco o in italiano nelle situazioni quotidiane.',
+    'Superare la barriera linguistica al lavoro, a scuola o nei contatti sociali.',
+    'Sentirsi a proprio agio in gruppi internazionali, con amici o familiari.',
+    'Imparare con i propri tempi, attraverso esempi pratici e situazioni reali.',
   ],
-  'box_title' => 'Approccio senza stress',
-  'box_text' => 'Lezioni di supporto, tanta conversazione e pratica basata sulla tua vita quotidiana. Grammatica solo dove aiuta davvero a parlare.',
-  'cta' => 'Scrivimi',
-  'cta2' => 'Vedi l’offerta',
+  'image_alt' => 'Lezioni di lingua online – conversazione e apprendimento in un’atmosfera accogliente',
 ];

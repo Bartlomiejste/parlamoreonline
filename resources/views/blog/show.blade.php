@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @php
     use App\Support\SchemaBuilder;
 
@@ -11,24 +12,39 @@
 
     $blogPostingSchema = SchemaBuilder::blogPosting($post, $canonicalUrl);
 @endphp
+
 @include('seo.breadcrumbs-jsonld', ['schema' => $breadcrumbsSchema])
 @include('seo.blogposting-jsonld', ['schema' => $blogPostingSchema])
 
 @section('content')
-    <section class="bg-bg">
+    <section class="bg-bg" aria-labelledby="post-title">
         <div class="max-w-3xl mx-auto px-4 py-16">
-            <a href="{{ route('blog', ['locale' => app()->getLocale()]) }}" class="text-sm font-semibold text-accent">
+
+            <a href="{{ route('blog', ['locale' => app()->getLocale()]) }}" class="text-sm font-semibold text-accent"
+                aria-label="{{ __('blog.back_aria') }}">
                 ← {{ __('blog.back') }}
             </a>
 
-            <h1 class="mt-4 font-title text-4xl">{{ $post['title'] }}</h1>
-            <p class="mt-3 text-ink/60">{{ $post['date'] }}</p>
+            <h1 id="post-title" class="mt-4 font-title text-4xl">
+                {{ $post['title'] }}
+            </h1>
 
-            <article class="mt-8 prose prose-lg max-w-none">
+            @if (!empty($post['date_iso']))
+                <time class="mt-3 text-ink/60" datetime="{{ $post['date_iso'] }}">
+                    {{ $post['date'] }}
+                </time>
+            @else
+                <p class="mt-3 text-ink/60">{{ $post['date'] }}</p>
+            @endif
+
+            <article class="mt-8 prose prose-lg max-w-none" aria-label="{{ __('blog.post_content') }}">
                 @foreach ($post['content'] as $para)
-                    <p class="text-ink/80 leading-relaxed">{{ $para }}</p>
+                    <p class="text-ink/80 leading-relaxed">
+                        {{ $para }}
+                    </p>
                 @endforeach
             </article>
+
         </div>
     </section>
 @endsection

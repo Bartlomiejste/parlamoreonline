@@ -10,3 +10,10 @@ html {
     outline: 2px solid #e85d5d;
     outline-offset: 2px;
 }
+
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}

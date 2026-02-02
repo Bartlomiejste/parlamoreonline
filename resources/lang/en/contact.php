@@ -1,27 +1,29 @@
 <?php
+
 return [
   'h1' => 'Contact',
-  'lead' => 'Send a message and I’ll help you choose the right level and lesson format.',
-  'box_title' => 'What to include in your message',
+  'lead' => 'Do you have questions or would you like to book a lesson?',
+  'left_text' => 'Fill out the form and I will get back to you as soon as possible so we can tailor the lessons to your needs.',
+
+  'box_title' => 'What is worth including in your message?',
   'box_bullets' => [
-    'Which language: Italian or Polish (or both).',
-    'Your level (if you know it) and your goal.',
-    'Your availability (days/times) and preference: group or 1:1.',
+    'Which language you are interested in: Italian or Polish (or both).',
+    'Your level (if you know it) and your learning goal.',
+    'Your preferred course type and availability (days/times).',
   ],
+
   'form' => [
     'name' => 'Name',
     'email' => 'Email',
-    'language' => 'Preferred contact language',
+    'course_type' => 'Course type',
+    'course_individual' => 'Individual',
+    'course_pair' => 'In a pair',
+    'course_group' => 'Group',
     'choose' => 'Choose',
-    'level' => 'Level',
-    'level_ph' => 'e.g. A1 / A2 / B1 (optional)',
-    'goal' => 'Goal',
-    'goal_ph' => 'e.g. work, relocation, conversation',
-    'availability' => 'Availability',
-    'availability_ph' => 'e.g. Tue/Fri after 6pm',
     'message' => 'Message',
-    'send' => 'Send',
-    'privacy' => 'By sending a message, you agree to be contacted about lessons.',
+    'send' => 'Send message',
+    'privacy' => 'By sending this message, you agree to be contacted regarding the lessons.',
   ],
-  'sent_ok' => 'Thank you! Your message has been sent. I’ll get back to you as soon as possible.',
+
+  'sent_ok' => 'Thank you! Your message has been sent. I will get back to you as soon as possible.',
 ];

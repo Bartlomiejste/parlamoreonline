@@ -1,8 +1,8 @@
 <?php
 return [
   'badge' => 'Lekcje online • PL / EN / IT',
-  'h1' => 'Włoski i polski online — praktycznie, w małych grupach.',
-  'lead' => 'Dla osób mieszkających za granicą, expatów i tych, którzy chcą mówić pewnie w realnych sytuacjach: praca, związek, codzienne sprawy.',
+  'h1' => 'Włoski i polski online — praktycznie.',
+  'lead' => 'Pomagam osobom funkcjonującym między różnymi językami i kulturami komnunikować się pewnie na co dzień',
   'cta_primary' => 'Umów bezpłatną konsultację (15 min)',
   'cta_secondary' => 'Zobacz ofertę',
   'highlights' => [
@@ -12,5 +12,9 @@ return [
   ],
   'card_title' => 'Real-life język',
   'card_text' => 'Uczymy się tak, żebyś umiał/a powiedzieć to, co naprawdę chcesz — a nie tylko “zrobić ćwiczenie”.',
-  'note' => 'Zajęcia przez Zoom/Google Meet. Materiały na ekranie, dużo mówienia i feedback na bieżąco.',
+  'hero_img_title' => 'Uczę polskiego i włoskiego osoby z całego świata – online',
+  'hero_img_lead' => 'Rozumiem, że język może być barierą, dlatego pomagam zamienić go w narzędzie do swobodnej komunikacji.',
+  'hero_more' => 'WIĘCEJ',
+  'hero_more_aria' => 'Przejdź do sekcji O mnie',
+  'hero_img_alt' => 'Widok z okna samolotu – nauka języka online',
 ];

@@ -1,15 +1,12 @@
 <?php
 return [
-  'h2' => 'Dla kogo są te lekcje?',
-  'lead' => 'Jeśli mieszkasz za granicą albo chcesz używać języka w prawdziwym życiu — jesteś w dobrym miejscu.',
+  'h2' => 'Dla kogo są te zajęcia?',
+  'lead' => 'Moje lekcje są dla osób, które chcą:',
   'bullets' => [
-    'Mieszkasz za granicą i chcesz swobodnie mówić na co dzień.',
-    'Jesteś w związku międzynarodowym i chcesz lepiej się komunikować.',
-    'Chcesz „odblokować mówienie” i nabrać pewności.',
-    'Potrzebujesz języka do pracy, spotkań i codziennych spraw.',
+    'Mówić swobodnie po polsku lub po włosku w codziennych sytuacjach.',
+    'Przełamać barierę językową w pracy, w szkole lub w kontaktach z innymi.',
+    'Czuć się pewnie w grupach międzynarodowych, z przyjaciółmi lub rodziną.',
+    'Uczyć się w swoim tempie, z praktycznymi przykładami i realnymi sytuacjami.',
   ],
-  'box_title' => 'Podejście bez spiny',
-  'box_text' => 'Wspierające zajęcia, dużo mówienia i praktyka w kontekście Twojego życia. Gramatyka tylko tam, gdzie naprawdę pomaga mówić.',
-  'cta' => 'Napisz do mnie',
-  'cta2' => 'Zobacz ofertę',
+  'image_alt' => 'Zajęcia językowe online – rozmowa i nauka w przyjaznej atmosferze',
 ];

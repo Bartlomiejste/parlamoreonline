@@ -1,8 +1,16 @@
-<p><strong>Imię:</strong> {{ $d['name'] }}</p>
-<p><strong>Email:</strong> {{ $d['email'] }}</p>
-<p><strong>Język:</strong> {{ $d['language'] ?? '-' }}</p>
-<p><strong>Poziom:</strong> {{ $d['level'] ?? '-' }}</p>
-<p><strong>Cel:</strong> {{ $d['goal'] ?? '-' }}</p>
-<p><strong>Dostępność:</strong> {{ $d['availability'] ?? '-' }}</p>
+@php
+    $courseLabels = [
+        'individual' => __('contact.form.course_individual'),
+        'pair' => __('contact.form.course_pair'),
+        'group' => __('contact.form.course_group'),
+    ];
+
+    $course = $d['course_type'] ?? '';
+    $courseText = $courseLabels[$course] ?? '-';
+@endphp
+
+<p><strong>Imię:</strong> {{ $d['name'] ?? '-' }}</p>
+<p><strong>Email:</strong> {{ $d['email'] ?? '-' }}</p>
+<p><strong>Typ kursu:</strong> {{ $courseText }}</p>
 <hr>
-<p style="white-space: pre-line;">{{ $d['message'] }}</p>
+<p style="white-space: pre-line;">{{ $d['message'] ?? '' }}</p>
