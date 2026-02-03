@@ -1,4 +1,4 @@
 <?php
 return [
-  'short' => 'Italian and Polish online lessons — practical, conversation-based, in small groups.',
+  'short' => 'Online Italian and Polish lessons — practical, to help you speak fluently',
 ];

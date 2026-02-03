@@ -4,11 +4,13 @@
 @endphp
 
 <section id="home" class="relative w-full overflow-hidden bg-bg" aria-labelledby="hero-title">
-    <div class="relative h-[50vh] min-h-[600px]">
+    <div class="relative h-[50vh] min-h-[850px]">
 
-        {{-- obraz --}}
-        <img src="{{ asset('assets/hero-airplane.png') }}" alt="{{ __('home.hero_img_alt') }}"
-            class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high">
+        {{-- VIDEO TŁO --}}
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto"
+            poster="{{ asset('assets/hero_airplane.png') }}">
+            <source src="{{ asset('assets/hero_airplanefilm.mp4') }}" type="video/mp4">
+        </video>
 
         {{-- overlay --}}
         <div class="absolute inset-0 bg-black/30" aria-hidden="true"></div>
@@ -17,16 +19,16 @@
         <div class="relative z-10 flex h-full items-center justify-center text-center px-6">
             <div class="max-w-3xl">
 
-                <h1 id="hero-title" class="font-title text-3xl md:text-5xl font-bold text-black leading-snug">
+                <h1 id="hero-title" class="font-title text-3xl md:text-5xl font-bold text-white leading-snug">
                     {{ trans('home.hero_img_title') }}
                 </h1>
 
-                <p class="mt-4 text-base md:text-lg text-black/80 max-w-2xl mx-auto font-medium">
+                <p class="mt-4 text-base md:text-lg text-white/80 max-w-2xl mx-auto font-medium">
                     {{ trans('home.hero_img_lead') }}
                 </p>
 
                 <a href="{{ $aboutUrl }}"
-                    class="mt-6 inline-flex px-8 py-3 rounded-full bg-accent text-black font-bold shadow hover:opacity-95 transition"
+                    class="mt-6 inline-flex px-8 py-3 rounded-full bg-accent text-white font-bold shadow hover:opacity-95 transition"
                     aria-label="{{ __('home.hero_more_aria') }}">
                     {{ trans('home.hero_more') }}
                 </a>

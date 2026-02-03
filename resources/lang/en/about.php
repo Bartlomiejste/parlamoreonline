@@ -22,5 +22,5 @@ return [
   // Image
   'photo_alt' => 'Aleksandra Szczepaniak – Polish and Italian language tutor',
 
-  'cta' => 'Contact me — I will help you choose the right level and plan',
+  'cta' => 'Contact me',
 ];

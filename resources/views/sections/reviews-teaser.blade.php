@@ -6,21 +6,17 @@
                 <h2 id="reviews-teaser-title" class="font-title text-3xl font-bold">
                     {{ __('reviews_teaser.h2') }}
                 </h2>
-
-                <p class="mt-3 text-ink/80">
-                    {{ __('reviews_teaser.lead') }}
-                </p>
             </div>
 
             <a href="{{ url('/' . app()->getLocale() . '/' . __('routes.reviews')) }}"
-                class="px-4 py-2 rounded-2xl bg-snow border border-stone/30 font-semibold hover:border-accent transition"
+                class="px-5 py-3 rounded-2xl bg-accent text-white font-semibold shadow hover:opacity-95 transition"
                 aria-label="{{ __('reviews_teaser.cta_aria') }}">
                 {{ __('reviews_teaser.cta') }}
             </a>
         </div>
 
         <ul class="mt-10 grid gap-5">
-            @foreach (__('reviews.items') as $r)
+            @foreach (__('reviews_teaser.items') as $r)
                 @php
                     $rating = (int) ($r['rating'] ?? 5);
                 @endphp

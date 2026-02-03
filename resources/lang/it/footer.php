@@ -1,4 +1,4 @@
 <?php
 return [
-  'short' => 'Lezioni online di italiano e polacco — pratiche, conversazionali, in piccoli gruppi.',
+  'short' => 'Lezioni di italiano e polacco online — pratiche, per parlare con naturalezza',
 ];

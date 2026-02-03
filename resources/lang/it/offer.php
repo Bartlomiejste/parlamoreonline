@@ -2,7 +2,7 @@
 
 return [
   'h1' => 'Offerta',
-  'lead' => 'Scegli la formula delle lezioni — io ti aiuterò a individuare il livello e il piano giusti per iniziare a parlare rapidamente.',
+  'lead' => 'Scegli la forma delle lezioni — e ti aiuterò a definire il livello e il piano.',
   'cards' => [
     [
       'title' => 'Corso individuale',

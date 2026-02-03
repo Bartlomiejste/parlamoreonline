@@ -22,5 +22,5 @@ return [
   // Obrazek
   'photo_alt' => 'Aleksandra Szczepaniak – lektorka języka polskiego i włoskiego',
 
-  'cta' => 'Napisz do mnie — dobiorę poziom i plan',
+  'cta' => 'Napisz do mnie',
 ];

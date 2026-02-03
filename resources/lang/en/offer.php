@@ -2,7 +2,7 @@
 
 return [
   'h1' => 'Offer',
-  'lead' => 'Choose the lesson format — and I will help you select the right level and plan so you can start speaking quickly.',
+  'lead' => 'Choose the type of lessons — and I will help match the level and plan.',
   'cards' => [
     [
       'title' => 'Individual course',

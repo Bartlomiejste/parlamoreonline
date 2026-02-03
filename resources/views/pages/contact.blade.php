@@ -21,14 +21,10 @@
                 {{-- DANE KONTAKTOWE --}}
                 <nav class="mt-8" aria-label="{{ __('contact.social_label') }}">
                     <div class="flex items-center gap-5">
-                        <a href="mailto:{{ config('mail.from.address') }}" class="transition hover:scale-110"
-                            aria-label="{{ __('footer.email') }}">
-                            <img src="{{ asset('assets/footer/gmail.png') }}" alt="{{ __('footer.email') }}" class="h-8 w-8"
-                                loading="lazy">
-                        </a>
 
-                        <a href="https://facebook.com/TwojProfil" target="_blank" rel="noopener noreferrer"
-                            class="transition hover:scale-110" aria-label="Facebook">
+
+                        <a href="https://www.facebook.com/profile.php?id=61586056376364" target="_blank"
+                            rel="noopener noreferrer" class="transition hover:scale-110" aria-label="Facebook">
                             <img src="{{ asset('assets/footer/facebook.png') }}" alt="Facebook" class="h-8 w-8"
                                 loading="lazy">
                         </a>
@@ -38,6 +34,13 @@
                             <img src="{{ asset('assets/footer/instagram.png') }}" alt="Instagram" class="h-8 w-8"
                                 loading="lazy">
                         </a>
+
+                        <a href="mailto:{{ config('mail.from.address') }}" class="transition hover:scale-110"
+                            aria-label="{{ __('footer.email') }}">
+                            <img src="{{ asset('assets/footer/gmail.png') }}" alt="{{ __('footer.email') }}" class="h-8 w-8"
+                                loading="lazy">
+                        </a>
+
                     </div>
                 </nav>
 

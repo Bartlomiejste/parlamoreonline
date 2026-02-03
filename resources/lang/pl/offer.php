@@ -2,7 +2,7 @@
 
 return [
   'h1' => 'Oferta',
-  'lead' => 'Wybierz formę zajęć — a ja pomogę dopasować poziom i plan, żebyś szybko zaczął/a mówić.',
+  'lead' => 'Wybierz formę zajęć — a ja pomogę dopasować poziom i plan.',
   'cards' => [
     [
       'title' => 'Kurs indywidualny',

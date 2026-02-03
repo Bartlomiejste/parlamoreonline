@@ -5,13 +5,10 @@
                 <h2 id="faq-teaser-title" class="font-title text-3xl">
                     {{ __('faq_teaser.h2') }}
                 </h2>
-                <p class="mt-3 text-ink/80">
-                    {{ __('faq_teaser.lead') }}
-                </p>
             </div>
 
             <a href="{{ url('/' . app()->getLocale() . '/faq') }}"
-                class="px-4 py-2 rounded-2xl bg-bg border border-stone/30 font-semibold hover:border-accent"
+                class="px-5 py-3 rounded-2xl bg-accent text-white font-semibold shadow hover:opacity-95"
                 aria-label="{{ __('faq_teaser.cta_aria') }}">
                 {{ __('faq_teaser.cta') }}
             </a>

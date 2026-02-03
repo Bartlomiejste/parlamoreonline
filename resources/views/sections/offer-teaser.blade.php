@@ -6,14 +6,10 @@
                 <h2 id="offer-teaser-title" class="font-title text-3xl">
                     {{ __('offer_teaser.h2') }}
                 </h2>
-
-                <p class="mt-3 text-ink/80 max-w-2xl">
-                    {{ __('offer_teaser.lead') }}
-                </p>
             </div>
 
             <a href="{{ url('/' . app()->getLocale() . '/' . __('routes.offer')) }}"
-                class="px-4 py-2 rounded-2xl bg-bg border border-stone/30 font-semibold hover:border-accent"
+                class="px-5 py-3 rounded-2xl bg-accent text-white font-semibold shadow hover:opacity-95"
                 aria-label="{{ __('offer_teaser.cta_aria') }}">
                 {{ __('offer_teaser.cta') }}
             </a>

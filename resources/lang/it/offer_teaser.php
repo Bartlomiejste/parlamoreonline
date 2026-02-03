@@ -1,7 +1,6 @@
 <?php
 return [
   'h2' => 'Un’offerta pensata per te',
-  'lead' => 'Scegli la formula che ti garantisce continuità e veri progressi nel parlato.',
   'cta' => 'Vai all’offerta',
   'cards' => [
     ['title'=>'Corso individuale', 'text'=>'Lezioni individuali al 100% personalizzate in base alle tue esigenze e al tuo ritmo di apprendimento.'],

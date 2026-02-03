@@ -22,5 +22,5 @@ return [
   // Immagine
   'photo_alt' => 'Aleksandra Szczepaniak – insegnante di lingua polacca e italiana',
 
-  'cta' => 'Scrivimi — ti aiuterò a scegliere il livello e il piano giusto',
+  'cta' => 'Scrivimi',
 ];
