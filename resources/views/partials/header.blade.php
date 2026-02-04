@@ -17,22 +17,25 @@
         </a>
 
         <nav x-data="{ open: false }" class="flex items-center gap-4" aria-label="{{ __('nav.main') }}">
-            <button type="button" class="md:hidden px-3 py-2 rounded-xl bg-snow shadow" @click="open=!open"
-                :aria-expanded="open.toString()" aria-controls="mobile-menu" aria-label="{{ __('nav.toggle') }}">
+            <button type="button" class="md:hidden px-3 py-2 rounded-xl bg-snow shadow fixed z-20 end-10"
+                @click="open=!open" :aria-expanded="open.toString()" aria-controls="mobile-menu"
+                aria-label="{{ __('nav.toggle') }}">
                 ☰
             </button>
 
-            <ul class="hidden md:flex items-center gap-6 font-semibold">
-                <li><a class="hover:text-accent" href="{{ url($base) }}#home">{{ __('nav.home') }}</a></li>
-                <li><a class="hover:text-accent"
+            <ul class="hidden md:flex items-center gap-6 font-semibold whitespace-nowrap">
+                <li><a class="hover:text-accent whitespace-nowrap"
+                        href="{{ url($base) }}#home">{{ __('nav.home') }}</a></li>
+                <li><a class="hover:text-accent whitespace-nowrap"
                         href="{{ url($base . '/' . trans('routes.about', [], $loc)) }}">{{ __('nav.about') }}</a></li>
-                <li><a class="hover:text-accent"
+                <li><a class="hover:text-accent whitespace-nowrap"
                         href="{{ url($base . '/' . trans('routes.offer', [], $loc)) }}">{{ __('nav.offer') }}</a></li>
-                <li><a class="hover:text-accent" href="{{ url($base . '/faq') }}">{{ __('nav.faq') }}</a></li>
-                <li><a class="hover:text-accent"
+                <li><a class="hover:text-accent whitespace-nowrap"
+                        href="{{ url($base . '/faq') }}">{{ __('nav.faq') }}</a></li>
+                <li><a class="hover:text-accent whitespace-nowrap"
                         href="{{ url($base . '/' . trans('routes.reviews', [], $loc)) }}">{{ __('nav.reviews') }}</a>
                 </li>
-                <li><a class="hover:text-accent"
+                <li><a class="hover:text-accent whitespace-nowrap"
                         href="{{ url($base . '/' . trans('routes.contact', [], $loc)) }}">{{ __('nav.contact') }}</a>
                 </li>
 
