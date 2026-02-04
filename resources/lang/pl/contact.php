@@ -24,6 +24,8 @@ return [
     'send' => 'Wyślij wiadomość',
     'privacy' => 'Wysyłając wiadomość, zgadzasz się na kontakt zwrotny w sprawie zajęć.',
   ],
-
+  'contact' => [
+    'subject' => 'Nowa wiadomość z formularza kontaktowego',
+],
   'sent_ok' => 'Dziękuję! Wiadomość została wysłana. Odezwę się najszybciej jak to możliwe.',
 ];

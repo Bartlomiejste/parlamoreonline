@@ -24,6 +24,8 @@ return [
     'send' => 'Invia messaggio',
     'privacy' => 'Inviando il messaggio, acconsenti a essere ricontattato/a in merito alle lezioni.',
   ],
-
+  'contact' => [
+    'subject' => 'Nuovo messaggio dal modulo di contatto',
+],
   'sent_ok' => 'Grazie! Il messaggio è stato inviato correttamente. Ti risponderò il prima possibile.',
 ];

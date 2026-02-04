@@ -24,6 +24,8 @@ return [
     'send' => 'Send message',
     'privacy' => 'By sending this message, you agree to be contacted regarding the lessons.',
   ],
-
+  'contact' => [
+    'subject' => 'New message from the contact form',
+],
   'sent_ok' => 'Thank you! Your message has been sent. I will get back to you as soon as possible.',
 ];

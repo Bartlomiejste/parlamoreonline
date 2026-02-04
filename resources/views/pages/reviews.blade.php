@@ -19,7 +19,7 @@
                             <div class="grid grid-cols-[auto_1fr] gap-4 items-start flex-1">
 
                                 {{-- LEWA KOLUMNA --}}
-                                <div class="flex flex-col items-start gap-1 min-w-[120px]">
+                                <div class="flex flex-col items-start gap-1 md:min-w-[120px] min-w-0">
                                     <div class="font-semibold text-lg">
                                         {{ $r['name'] }}
                                     </div>

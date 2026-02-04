@@ -22,8 +22,8 @@ class ContactMessage extends Mailable
     public function build(): self
     {
         return $this
-            ->subject(__('emails.contact.subject'))
-            ->replyTo($this->data['email'] ?? config('mail.from.address'))
+            ->subject(__('contact.contact.subject'))
+            ->replyTo($this->data['email'] ?? config('mail.from.address'), $this->data['name'] ?? null)
             ->view('emails.contact')
             ->with([
                 'd' => $this->data,
