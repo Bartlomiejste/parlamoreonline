@@ -8,21 +8,12 @@ use App\Support\LocaleSwitcher;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        //
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
-        View::composer('*', function ($view) {
-            $view->with('localeLinks', LocaleSwitcher::links());
-        });
+        View::share('localeLinks', LocaleSwitcher::links());
     }
 }

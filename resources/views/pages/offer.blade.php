@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@php
+    $loc = request()->route('locale') ?? app()->getLocale();
+@endphp
 
 @section('content')
     <section class="bg-bg" aria-labelledby="offer-title">
@@ -36,7 +39,7 @@
 
 
             <div class="mt-10">
-                <a href="{{ url('/' . app()->getLocale() . '/' . __('routes.contact')) }}"
+                <a href="{{ url('/' . $loc . '/' . trans('routes.contact', [], $loc)) }}"
                     class="inline-flex px-5 py-3 rounded-2xl bg-accent text-white font-semibold shadow hover:opacity-95"
                     aria-label="{{ __('offer.cta_aria') }}">
                     {{ __('offer.cta') }}

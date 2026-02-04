@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+@php
+    $loc = request()->route('locale') ?? app()->getLocale();
+@endphp
+
+<html lang="{{ $loc }}">
 
 <head>
     <meta charset="utf-8">
@@ -28,15 +32,18 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
     <meta property="og:image" content="{{ asset(config('seo.default_images.og')) }}">
-    <meta property="og:locale" content="{{ str_replace('-', '_', app()->getLocale()) }}">
+    <meta property="og:locale" content="{{ str_replace('-', '_', $loc) }}">
+
 
     @if (!empty($alternates))
-        @foreach (array_keys($alternates) as $loc)
-            @if ($loc !== app()->getLocale())
-                <meta property="og:locale:alternate" content="{{ str_replace('-', '_', $loc) }}">
+        @foreach (array_keys($alternates) as $aLoc)
+            @if ($aLoc !== $loc)
+                <meta property="og:locale:alternate" content="{{ str_replace('-', '_', $aLoc) }}">
             @endif
         @endforeach
     @endif
+
+
 
     {{-- Twitter --}}
     <meta name="twitter:card" content="summary_large_image">
@@ -72,7 +79,6 @@
 
     @include('partials.footer')
 
-    {{-- Structured data: Organization + Website --}}
     @include('seo.structured-data')
 </body>
 

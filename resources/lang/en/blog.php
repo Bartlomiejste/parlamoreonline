@@ -1,49 +1,31 @@
 <?php
 return [
   'h1' => 'Blog',
-  'lead' => 'Short and practical: mini dialogues, vocabulary and tips for living abroad.',
+  'lead' => 'Short and practical: mini language lessons with examples you can use right away.',
   'back' => 'Back to blog',
   'posts' => [
     [
-      'id' => 'restaurant',
-      'slug' => 'italian-at-a-restaurant-mini-dialogue',
-      'title' => 'Italian at a restaurant: a 2-minute mini dialogue that saves you',
-      'excerpt' => 'A simple dialogue + useful phrases: ordering, requests, paying and “one more, please…”.',
-      'date' => '2026-01-11',
-      'meta_title' => 'Italian at a restaurant — mini dialogue & phrases | Parlamore Online',
-      'meta_description' => 'A mini Italian restaurant dialogue + key phrases for ordering, questions and paying. Practical online learning.',
+      'id' => '1',
+      'slug' => 'when-to-use-piu-di-piu-in-piu',
+      'title' => 'When do we use più, di più and in più in Italian?',
+      'excerpt' => 'Short and with examples: the differences between più, di più and in più in Italian.',
+      'date' => '2026-02-04',
+      'meta_title' => 'Più, di più and in più — when to use them? | Parlamoreonline',
+      'meta_description' => 'Learn when to use più, di più and in più in Italian. Simple explanation with practical examples.',
       'content' => [
-        'Start with simple phrases: “Vorrei…” (I’d like…), “Per favore” (please), “Il conto, per favore” (the bill, please).',
-        'Mini dialogue: Waiter: “Cosa desidera?” You: “Vorrei una pizza margherita e una bottiglia d’acqua, per favore.”',
-        'Tip: if you don’t understand — “Può ripetere, per favore?” (Could you repeat, please?).',
-      ],
-    ],
-    [
-      'id' => 'expat',
-      'slug' => 'polish-for-expats-5-common-situations',
-      'title' => 'Polish for expats: 5 situations we practise most often',
-      'excerpt' => 'Work, offices, doctor visits, renting an apartment and small talk. What should you learn first?',
-      'date' => '2026-01-11',
-      'meta_title' => 'Polish for expats — 5 key situations to practise | Parlamore Online',
-      'meta_description' => 'Common real-life situations in Poland: offices, doctor, work, renting, small talk. What phrases help you from day one?',
-      'content' => [
-        'The biggest progress comes from context-based practice. That’s why we train the situations that show up every week.',
-        'A strong opening sentence often solves half the stress: “Good morning, I would like…” + the specific request.',
-        'In class we do role-plays and build your personal “ready-to-use” phrases for real life.',
-      ],
-    ],
-    [
-      'id' => 'speaking',
-      'slug' => 'how-to-break-the-speaking-barrier-3-steps',
-      'title' => 'How to break the speaking barrier: 3 steps without perfection pressure',
-      'excerpt' => 'A simple plan: short sentences, automation and feedback “in the moment”, not after.',
-      'date' => '2026-01-11',
-      'meta_title' => 'Break the speaking barrier — 3 practical steps | Parlamore Online',
-      'meta_description' => 'A practical plan to break the speaking barrier: short sentences, role-plays and feedback that doesn’t block your flow.',
-      'content' => [
-        'Step 1: Build short sentences and reuse them in different contexts.',
-        'Step 2: Practise role-plays (work, shop, phone calls) — speaking becomes automatic.',
-        'Step 3: Live feedback. Corrections should help, not stress you out.',
+        'One of the most frequently asked questions in my Italian classes is: when do we use più, di più and in più? Although they seem to mean similar things, their usage is different.',
+        
+        'PIÙ: we use it before an adjective, adverb or noun when we say that something is “more” or “to a greater extent”. Examples: Deve essere più coraggioso. (He must be braver.) Marco è più veloce di te. (Marco is faster than you.) C’è più gente del previsto. (There are more people than expected.)',
+        
+        'Important structure: NON + VERB + PIÙ – used when something no longer happens. Example: Dopo questa situazione non beve più. (After this situation, he no longer drinks.)',
+        
+        'DI PIÙ: the meaning is similar to più, but di più is used after the verb. Example: Questo progetto è molto importante, quindi devi lavorarci di più. (This project is very important, so you need to work on it more.)',
+        
+        'IN PIÙ: means something extra, in addition, more than planned. Example: Avrei dovuto pagare solo 30 euro per la camera, invece ho pagato 30 euro in più. (I was supposed to pay only 30 euros for the room, but I paid 30 euros extra.)',
+        
+        'Summary: più before an adjective, adverb or noun; di più after the verb; in più means something extra.',
+        
+        'Finally, remember: it’s better to study regularly in small doses than to study for many hours once in a while. Even 5 minutes a day with examples in context works better than long but rare study sessions.',
       ],
     ],
   ],

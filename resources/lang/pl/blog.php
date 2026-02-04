@@ -1,49 +1,31 @@
 <?php
 return [
   'h1' => 'Blog',
-  'lead' => 'Krótko i praktycznie: mini-dialogi, słownictwo i wskazówki do życia za granicą.',
+  'lead' => 'Krótko i praktycznie: mini-lekcje językowe z przykładami do użycia od razu.',
   'back' => 'Wróć do bloga',
   'posts' => [
     [
-      'id' => 'restaurant',
-      'slug' => 'wloski-w-restauracji-mini-dialog',
-      'title' => 'Włoski w restauracji: mini-dialog, który uratuje Cię w 2 minuty',
-      'excerpt' => 'Prosty dialog + przydatne zwroty: zamówienie, prośby, płatność i “poproszę jeszcze…”.',
-      'date' => '2026-01-11',
-      'meta_title' => 'Włoski w restauracji — mini-dialog i zwroty | Parlamore Online',
-      'meta_description' => 'Mini-dialog po włosku do restauracji + najważniejsze zwroty: zamawianie, pytania, płatność. Nauka praktyczna online.',
+      'id' => '1',
+      'slug' => 'kiedy-uzywamy-piu-di-piu-in-piu',
+      'title' => 'Kiedy używamy più, di più i in più w języku włoskim?',
+      'excerpt' => 'Krótko i na przykładach: różnice między più, di più i in più w języku włoskim.',
+      'date' => '2026-02-04',
+      'meta_title' => 'Più, di più i in più — kiedy używać? | Parlamoreonline',
+      'meta_description' => 'Dowiedz się, kiedy używać più, di più i in più w języku włoskim. Proste wyjaśnienie i praktyczne przykłady.',
       'content' => [
-        'Zacznij od prostych zwrotów: “Vorrei…” (chciałbym/chciałabym), “Per favore” (proszę), “Il conto, per favore” (rachunek).',
-        'Mini-dialog: Kelner: “Cosa desidera?” Ty: “Vorrei una pizza margherita e una bottiglia d’acqua, per favore.”',
-        'Tip: jeśli nie rozumiesz — “Può ripetere, per favore?” (Czy może Pan/Pani powtórzyć?).',
-      ],
-    ],
-    [
-      'id' => 'expat',
-      'slug' => 'polski-dla-expatow-5-sytuacji',
-      'title' => 'Polski dla expatów: 5 sytuacji, które ćwiczymy najczęściej',
-      'excerpt' => 'Praca, urząd, lekarz, wynajem mieszkania i small talk. Co warto umieć powiedzieć od razu?',
-      'date' => '2026-01-11',
-      'meta_title' => 'Polski dla expatów — 5 sytuacji do ćwiczenia | Parlamore Online',
-      'meta_description' => 'Najczęstsze sytuacje w Polsce: urząd, lekarz, praca, wynajem, small talk. Jakie zwroty warto znać na start?',
-      'content' => [
-        'Największy przeskok daje praktyka w kontekście. Dlatego ćwiczymy dokładnie te sytuacje, które pojawiają się co tydzień.',
-        'Dobre pierwsze zdanie to często połowa sukcesu: “Dzień dobry, chciałbym/chciałabym…” + konkret.',
-        'Na zajęciach robimy scenki i budujemy Twoje własne “gotowce” do użycia w realu.',
-      ],
-    ],
-    [
-      'id' => 'speaking',
-      'slug' => 'jak-przelamac-bariere-mowienia',
-      'title' => 'Jak przełamać barierę mówienia? 3 kroki bez presji perfekcji',
-      'excerpt' => 'Prosty plan: krótkie zdania, automatyzacja i poprawianie “w trakcie”, nie po fakcie.',
-      'date' => '2026-01-11',
-      'meta_title' => 'Jak przełamać barierę mówienia — 3 kroki | Parlamore Online',
-      'meta_description' => 'Praktyczny plan przełamywania bariery mówienia: krótkie zdania, scenki i feedback, który nie blokuje rozmowy.',
-      'content' => [
-        'Krok 1: Buduj krótkie zdania i powtarzaj je w różnych kontekstach.',
-        'Krok 2: Ćwicz scenki (praca, sklep, telefon) — mówienie staje się automatyczne.',
-        'Krok 3: Feedback na bieżąco. Poprawki mają pomagać, a nie stresować.',
+        'Jednym z najczęściej zadawanych pytań na moich zajęciach włoskiego jest: kiedy używamy più, di più i in più? Choć znaczą podobnie, różnią się użyciem.',
+        
+        'PIÙ: używamy przed przymiotnikiem, przysłówkiem albo rzeczownikiem, kiedy mówimy, że czegoś jest więcej albo bardziej. Przykłady: Deve essere più coraggioso. (Musi być bardziej odważny.) Marco è più veloce di te. (Marco jest szybszy od ciebie.) C’è più gente del previsto. (Jest więcej ludzi niż się spodziewano.)',
+        
+        'Ważna konstrukcja: NON + CZASOWNIK + PIÙ – używamy, kiedy coś już się nie dzieje. Przykład: Dopo questa situazione non beve più. (Po tej sytuacji już nie pije.)',
+        
+        'DI PIÙ: znaczenie podobne do più, ale di più stawiamy po czasowniku. Przykład: Questo progetto è molto importante, quindi devi lavorarci di più. (Ten projekt jest bardzo ważny, więc musisz nad nim więcej pracować.)',
+        
+        'IN PIÙ: oznacza coś dodatkowego, ponadto, więcej niż było w planie. Przykład: Avrei dovuto pagare solo 30 euro per la camera, invece ho pagato 30 euro in più. (Miałem zapłacić tylko 30 euro za pokój, a zapłaciłem 30 euro więcej.)',
+        
+        'Podsumowanie: più przed przymiotnikiem, przysłówkiem albo rzeczownikiem; di più po czasowniku; in più oznacza coś dodatkowego.',
+        
+        'Na koniec pamiętaj: lepiej uczyć się regularnie w małych dawkach niż raz na jakiś czas przez kilka godzin. Nawet 5 minut dziennie z przykładami w kontekście daje lepsze efekty niż długie, rzadkie sesje.',
       ],
     ],
   ],

@@ -18,7 +18,6 @@ class ContactController extends Controller
             'course_type' => ['nullable', 'in:individual,pair,group'],
             'message'     => ['required', 'string', 'max:2000'],
 
-            // honeypot (musi zostać puste)
             'website'     => ['nullable', 'string', 'max:0'],
         ]);
 

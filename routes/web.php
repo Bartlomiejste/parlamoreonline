@@ -14,13 +14,11 @@ Route::redirect('/', '/pl', 301);
 Route::group([
     'prefix' => '{locale}',
     'where' => ['locale' => 'pl|en|it'],
-    'middleware' => ['setlocale'],
+    'middleware' => ['web', 'setlocale'],
 ], function () {
 
-    // Home (one-page)
     Route::get('/', [PageController::class, 'home'])->name('home');
 
-    // Podstrony (SEO-friendly)
     Route::get('/o-mnie', [PageController::class, 'about'])->name('about')->whereIn('locale', ['pl']);
     Route::get('/about', [PageController::class, 'about'])->name('about_en')->whereIn('locale', ['en']);
     Route::get('/chi-sono', [PageController::class, 'about'])->name('about_it')->whereIn('locale', ['it']);
@@ -39,10 +37,8 @@ Route::group([
     Route::get('/contact', [PageController::class, 'contact'])->name('contact_en')->whereIn('locale', ['en']);
     Route::get('/contatto', [PageController::class, 'contact'])->name('contact_it')->whereIn('locale', ['it']);
 
-    // Blog (opcjonalny, ale włączony)
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
     Route::get('/blog/{id}-{slug?}', [BlogController::class, 'show'])->name('blog.show');
 
-    // Formularz kontaktowy
     Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 });

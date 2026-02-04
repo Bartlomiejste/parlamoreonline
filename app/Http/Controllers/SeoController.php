@@ -36,11 +36,7 @@ class SeoController extends Controller
             'contact' => fn ($l) => "/{$l}/" . trans('routes.contact', [], $l),
             'blog'    => fn ($l) => "/{$l}/blog",
         ];
-
-        /**
-         * Budujemy sitemapę w formie klastrów językowych:
-         * 1 wpis = 1 logical page + hreflang
-         */
+        
         $urls = [];
 
         foreach ($pages as $key => $resolver) {
@@ -56,10 +52,6 @@ class SeoController extends Controller
                 'alternates' => $cluster,
             ];
         }
-
-        // TODO (opcjonalnie): wpisy blogowe jako osobne URL-e
-        // $posts = trans('blog.posts');
-        // foreach ($posts as $post) { ... }
 
         return response()
             ->view('seo.sitemap', ['urls' => $urls])

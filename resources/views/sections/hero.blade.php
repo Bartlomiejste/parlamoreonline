@@ -1,6 +1,8 @@
 @php
-    $loc = app()->getLocale();
-    $aboutUrl = url('/' . $loc . '/' . __('routes.about'));
+    $loc = request()->route('locale') ?? app()->getLocale();
+    $aboutSlug = trans('routes.about', [], $loc);
+    $aboutSlug = trim($aboutSlug, '/');
+    $aboutUrl = $aboutSlug !== '' ? url('/' . $loc . '/' . $aboutSlug) : url('/' . $loc);
 @endphp
 
 <section id="home" class="relative w-full overflow-hidden bg-bg" aria-labelledby="hero-title">
@@ -9,7 +11,7 @@
         {{-- VIDEO TŁO --}}
         <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto"
             poster="{{ asset('assets/hero_airplane.png') }}">
-            <source src="{{ asset('assets/hero_airplanefilm.mp4') }}" type="video/mp4">
+            <source src="{{ asset('assets/hero_airplanefilm.mp4') }}?v=4" type="video/mp4">
         </video>
 
         {{-- overlay --}}

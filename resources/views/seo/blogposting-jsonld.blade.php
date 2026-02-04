@@ -1,10 +1,13 @@
 @php
-    $brand = config('seo.brand', 'Parlamore Online');
+    $loc = request()->route('locale') ?? app()->getLocale();
+@endphp
 
-    // Post image (jeśli masz okładkę per wpis – podstaw tu)
+@php
+
+    $brand = config('seo.brand', 'Parlamoreonline');
+
     $image = $post['image'] ?? asset('assets/logo.png');
 
-    // Krótki opis (jeśli masz excerpt – podstaw)
     $desc = $post['excerpt'] ?? ($post['meta_desc'] ?? null);
 
     $data = [
@@ -17,7 +20,7 @@
         'datePublished' => $post['date_iso'] ?? null,
         'dateModified' => $post['updated_iso'] ?? ($post['date_iso'] ?? null),
 
-        'inLanguage' => app()->getLocale(),
+        'inLanguage' => $loc,
 
         'mainEntityOfPage' => [
             '@type' => 'WebPage',
@@ -40,15 +43,13 @@
             ],
         ],
 
-        // Fajny sygnał, że to część bloga (związek struktury)
         'isPartOf' => [
             '@type' => 'Blog',
             'name' => $brand . ' Blog',
-            'url' => url('/' . app()->getLocale() . '/blog'),
+            'url' => url('/' . $loc . '/blog'),
         ],
     ];
 
-    // usuń nulle i puste rzeczy
     $data = array_filter($data, fn($v) => !is_null($v) && $v !== '');
 @endphp
 

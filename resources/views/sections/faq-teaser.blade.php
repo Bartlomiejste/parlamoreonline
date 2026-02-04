@@ -1,3 +1,7 @@
+@php
+    $loc = request()->route('locale') ?? app()->getLocale();
+@endphp
+
 <section class="bg-snow border-y border-stone/30" aria-labelledby="faq-teaser-title">
     <div class="max-w-6xl mx-auto px-4 py-16">
         <div class="flex items-end justify-between gap-6 flex-wrap">
@@ -7,7 +11,7 @@
                 </h2>
             </div>
 
-            <a href="{{ url('/' . app()->getLocale() . '/faq') }}"
+            <a href="{{ url('/' . $loc . '/faq') }}"
                 class="px-5 py-3 rounded-2xl bg-accent text-white font-semibold shadow hover:opacity-95"
                 aria-label="{{ __('faq_teaser.cta_aria') }}">
                 {{ __('faq_teaser.cta') }}

@@ -13,6 +13,7 @@ class BlogController extends Controller
     public function index(Request $request, string $locale)
     {
         App::setLocale($locale);
+        app('translator')->setLocale($locale);
 
         $posts = $this->posts($locale);
 
@@ -31,13 +32,13 @@ class BlogController extends Controller
     public function show(Request $request, string $locale, string $id, ?string $slug = null)
     {
         App::setLocale($locale);
+        app('translator')->setLocale($locale);
 
         $posts = $this->posts($locale);
         $post = Arr::first($posts, fn ($p) => (string) ($p['id'] ?? '') === (string) $id);
 
         abort_if(!$post, 404);
 
-        // Canonical slug enforcement (SEO): redirect only when slug is provided and different
         $correctSlug = (string) ($post['slug'] ?? '');
         if ($correctSlug !== '' && $slug !== null && $slug !== $correctSlug) {
             return redirect()->to(url("/{$locale}/blog/{$id}-{$correctSlug}"), 301);
@@ -54,7 +55,6 @@ class BlogController extends Controller
             $targetPosts = $this->posts($loc);
             $target = Arr::first($targetPosts, fn ($p) => (string) ($p['id'] ?? '') === (string) $id);
 
-            // If no translation exists in target locale -> fallback to blog index
             $alternates[$loc] = (is_array($target) && !empty($target['slug']))
                 ? url("/{$loc}/blog/{$id}-{$target['slug']}")
                 : url("/{$loc}/blog");
@@ -65,9 +65,6 @@ class BlogController extends Controller
 
     private function posts(string $locale): array
     {
-        // Ensure we read posts in the requested locale
-        App::setLocale($locale);
-
         $posts = trans('blog.posts', [], $locale);
 
         return is_array($posts) ? $posts : [];

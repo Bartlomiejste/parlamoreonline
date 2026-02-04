@@ -1,5 +1,9 @@
 @php
-    $brand = config('seo.brand', 'Parlamore Online');
+    $loc = request()->route('locale') ?? app()->getLocale();
+@endphp
+
+@php
+    $brand = config('seo.brand', 'Parlamoreonline');
 
     $sameAs = array_values(
         array_filter([
@@ -30,13 +34,13 @@
         '@id' => url('/#website'),
         'name' => $brand,
         'url' => url('/'),
-        'inLanguage' => app()->getLocale(),
+        'inLanguage' => $loc,
         'publisher' => [
             '@id' => url('/#organization'),
         ],
         'potentialAction' => [
             '@type' => 'SearchAction',
-            'target' => url('/' . app()->getLocale() . '/blog?q={search_term_string}'),
+            'target' => url('/' . $loc . '/blog?q={search_term_string}'),
             'query-input' => 'required name=search_term_string',
         ],
     ];

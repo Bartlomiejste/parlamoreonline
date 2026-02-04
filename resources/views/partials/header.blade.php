@@ -1,6 +1,12 @@
 @php
-    $loc = app()->getLocale();
-    $base = "/{$loc}";
+    $loc = request()->route('locale') ?? 'pl';
+    $base = '/' . $loc;
+
+    $flags = [
+        'pl' => ['src' => asset('assets/flags/pl.png'), 'label' => 'Polski'],
+        'en' => ['src' => asset('assets/flags/en.png'), 'label' => 'English'],
+        'it' => ['src' => asset('assets/flags/it.png'), 'label' => 'Italiano'],
+    ];
 @endphp
 
 <header class="sticky top-0 z-50 bg-bg/90 backdrop-blur border-b border-stone/30" role="banner">
@@ -19,30 +25,27 @@
             <ul class="hidden md:flex items-center gap-6 font-semibold">
                 <li><a class="hover:text-accent" href="{{ url($base) }}#home">{{ __('nav.home') }}</a></li>
                 <li><a class="hover:text-accent"
-                        href="{{ url($base . '/' . __('routes.about')) }}">{{ __('nav.about') }}</a></li>
+                        href="{{ url($base . '/' . trans('routes.about', [], $loc)) }}">{{ __('nav.about') }}</a></li>
                 <li><a class="hover:text-accent"
-                        href="{{ url($base . '/' . __('routes.offer')) }}">{{ __('nav.offer') }}</a></li>
+                        href="{{ url($base . '/' . trans('routes.offer', [], $loc)) }}">{{ __('nav.offer') }}</a></li>
                 <li><a class="hover:text-accent" href="{{ url($base . '/faq') }}">{{ __('nav.faq') }}</a></li>
                 <li><a class="hover:text-accent"
-                        href="{{ url($base . '/' . __('routes.reviews')) }}">{{ __('nav.reviews') }}</a></li>
+                        href="{{ url($base . '/' . trans('routes.reviews', [], $loc)) }}">{{ __('nav.reviews') }}</a>
+                </li>
                 <li><a class="hover:text-accent"
-                        href="{{ url($base . '/' . __('routes.contact')) }}">{{ __('nav.contact') }}</a></li>
-                <li><a class="hover:text-accent" href="{{ url($base . '/blog') }}">{{ __('nav.blog') }}</a></li>
+                        href="{{ url($base . '/' . trans('routes.contact', [], $loc)) }}">{{ __('nav.contact') }}</a>
+                </li>
+
+                {{-- BLOG TYLKO PRZEZ ROUTE --}}
+                <li><a class="hover:text-accent"
+                        href="{{ route('blog', ['locale' => $loc]) }}">{{ __('nav.blog') }}</a></li>
             </ul>
 
             {{-- języki --}}
             <div class="hidden md:flex items-center gap-2" aria-label="{{ __('nav.languages') }}">
-                @php
-                    $flags = [
-                        'pl' => ['src' => asset('assets/flags/pl.png'), 'label' => 'Polski'],
-                        'en' => ['src' => asset('assets/flags/en.png'), 'label' => 'English'],
-                        'it' => ['src' => asset('assets/flags/it.png'), 'label' => 'Italiano'],
-                    ];
-                @endphp
-
                 @foreach ($flags as $k => $f)
                     <a class="p-2 rounded-lg border border-stone/30 hover:border-accent transition
-                        {{ app()->getLocale() === $k ? 'border-accent ring-2 ring-accent/20' : '' }}"
+                        {{ $loc === $k ? 'border-accent ring-2 ring-accent/20' : '' }}"
                         href="{{ $localeLinks[$k] ?? url('/' . $k) }}" aria-label="{{ $f['label'] }}"
                         title="{{ $f['label'] }}" rel="alternate" hreflang="{{ $k }}">
                         <img src="{{ $f['src'] }}" alt="{{ $f['label'] }}" class="h-5 w-5 rounded-sm"
@@ -57,10 +60,11 @@
                 <div id="mobile-menu"
                     class="absolute right-4 top-16 w-64 bg-snow rounded-2xl shadow p-4 border border-stone/30"
                     role="menu" aria-label="{{ __('nav.mobile') }}">
+
                     <div class="flex gap-2 mb-3" aria-label="{{ __('nav.languages') }}">
                         @foreach ($flags as $k => $f)
                             <a class="p-2 rounded-lg border border-stone/30 hover:border-accent transition
-                                {{ app()->getLocale() === $k ? 'border-accent ring-2 ring-accent/20' : '' }}"
+                                {{ $loc === $k ? 'border-accent ring-2 ring-accent/20' : '' }}"
                                 href="{{ $localeLinks[$k] ?? url('/' . $k) }}" aria-label="{{ $f['label'] }}"
                                 title="{{ $f['label'] }}" rel="alternate" hreflang="{{ $k }}">
                                 <img src="{{ $f['src'] }}" alt="{{ $f['label'] }}" class="h-5 w-5 rounded-sm"
@@ -73,16 +77,20 @@
                     <ul class="grid gap-2 font-semibold">
                         <li><a class="hover:text-accent" href="{{ url($base) }}#home">{{ __('nav.home') }}</a></li>
                         <li><a class="hover:text-accent"
-                                href="{{ url($base . '/' . __('routes.about')) }}">{{ __('nav.about') }}</a></li>
+                                href="{{ url($base . '/' . trans('routes.about', [], $loc)) }}">{{ __('nav.about') }}</a>
+                        </li>
                         <li><a class="hover:text-accent"
-                                href="{{ url($base . '/' . __('routes.offer')) }}">{{ __('nav.offer') }}</a></li>
+                                href="{{ url($base . '/' . trans('routes.offer', [], $loc)) }}">{{ __('nav.offer') }}</a>
+                        </li>
                         <li><a class="hover:text-accent" href="{{ url($base . '/faq') }}">{{ __('nav.faq') }}</a></li>
                         <li><a class="hover:text-accent"
-                                href="{{ url($base . '/' . __('routes.reviews')) }}">{{ __('nav.reviews') }}</a></li>
-                        <li><a class="hover:text-accent"
-                                href="{{ url($base . '/' . __('routes.contact')) }}">{{ __('nav.contact') }}</a></li>
-                        <li><a class="hover:text-accent" href="{{ url($base . '/blog') }}">{{ __('nav.blog') }}</a>
+                                href="{{ url($base . '/' . trans('routes.reviews', [], $loc)) }}">{{ __('nav.reviews') }}</a>
                         </li>
+                        <li><a class="hover:text-accent"
+                                href="{{ url($base . '/' . trans('routes.contact', [], $loc)) }}">{{ __('nav.contact') }}</a>
+                        </li>
+                        <li><a class="hover:text-accent"
+                                href="{{ route('blog', ['locale' => $loc]) }}">{{ __('nav.blog') }}</a></li>
                     </ul>
                 </div>
             </div>

@@ -41,16 +41,13 @@ class PageController extends Controller
 
     private function sharedSeo(string $locale, string $page): array
     {
-        // Upewniamy się, że tłumaczenia lecą z właściwego locale (jeśli middleware nie zadziałał)
         App::setLocale($locale);
 
         $title = (string) __("seo.$page.title");
         $desc  = (string) __("seo.$page.description");
 
-        // canonical = aktualny url (bez query)
         $canonical = url()->current();
 
-        // alternate hreflang links
         $alternates = [];
         foreach (config('seo.locales', ['pl', 'en', 'it']) as $loc) {
             $alternates[$loc] = $this->localizedUrl($loc, $page);
@@ -61,7 +58,7 @@ class PageController extends Controller
 
     private function localizedUrl(string $locale, string $page): string
     {
-        // map page => localized path (using translations instead of hardcode)
+        
         if ($page === 'home') {
             return url("/{$locale}");
         }
@@ -79,7 +76,7 @@ class PageController extends Controller
             return $slug !== '' ? url("/{$locale}/{$slug}") : url("/{$locale}");
         }
 
-        // fallback
+
         return url("/{$locale}");
     }
 }

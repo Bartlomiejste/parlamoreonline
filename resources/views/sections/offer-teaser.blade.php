@@ -1,3 +1,7 @@
+@php
+    $loc = request()->route('locale') ?? app()->getLocale();
+@endphp
+
 <section class="bg-snow border-y border-stone/30" aria-labelledby="offer-teaser-title">
     <div class="max-w-6xl mx-auto px-4 py-16">
 
@@ -8,7 +12,7 @@
                 </h2>
             </div>
 
-            <a href="{{ url('/' . app()->getLocale() . '/' . __('routes.offer')) }}"
+            <a href="{{ url('/' . $loc . '/' . trans('routes.offer', [], $loc)) }}"
                 class="px-5 py-3 rounded-2xl bg-accent text-white font-semibold shadow hover:opacity-95"
                 aria-label="{{ __('offer_teaser.cta_aria') }}">
                 {{ __('offer_teaser.cta') }}

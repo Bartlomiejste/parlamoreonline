@@ -4,6 +4,7 @@
     $title = __('about.meta_title');
     $desc = __('about.meta_desc');
     $photo = asset('assets/about/aboutme.png');
+    $loc = request()->route('locale') ?? app()->getLocale();
 @endphp
 
 @section('content')
@@ -47,7 +48,7 @@
 
             {{-- CTA --}}
             <div class="mt-10 flex justify-center md:justify-start">
-                <a href="{{ url('/' . app()->getLocale() . '/' . __('routes.contact')) }}"
+                <a href="{{ url('/' . $loc . '/' . trans('routes.contact', [], $loc)) }}"
                     class="inline-flex px-6 py-3 rounded-2xl bg-accent text-white font-semibold shadow hover:opacity-95 transition"
                     aria-label="{{ __('about.cta_aria') }}">
                     {{ __('about.cta') }}

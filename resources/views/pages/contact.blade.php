@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@php
+    $loc = request()->route('locale') ?? app()->getLocale();
+@endphp
+
 @section('content')
     <section class="bg-bg" aria-labelledby="contact-title">
         <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12">
@@ -21,7 +25,6 @@
                 {{-- DANE KONTAKTOWE --}}
                 <nav class="mt-8" aria-label="{{ __('contact.social_label') }}">
                     <div class="flex items-center gap-5">
-
 
                         <a href="https://www.facebook.com/profile.php?id=61586056376364" target="_blank"
                             rel="noopener noreferrer" class="transition hover:scale-110" aria-label="Facebook">
@@ -68,8 +71,8 @@
                     </div>
                 @endif
 
-                <form method="post" action="{{ route('contact.send', ['locale' => app()->getLocale()]) }}"
-                    class="grid gap-4" novalidate>
+                <form method="post" action="{{ route('contact.send', ['locale' => $loc]) }}" class="grid gap-4"
+                    novalidate>
                     @csrf
 
                     {{-- honeypot --}}

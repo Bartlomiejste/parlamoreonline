@@ -23,7 +23,7 @@
             <ul class="mt-10 grid md:grid-cols-2 gap-5">
                 @foreach ($posts as $p)
                     <li class="list-none h-full">
-                        <a href="{{ url('/' . app()->getLocale() . '/blog/' . $p['id'] . '-' . $p['slug']) }}"
+                        <a href="{{ url('/' . request()->route('locale') . '/blog/' . $p['id'] . '-' . $p['slug']) }}"
                             class="h-full rounded-2xl bg-snow border border-stone/30 p-7 hover:border-accent transition flex flex-col"
                             aria-label="{{ __('blog.read_post_aria', ['title' => $p['title']]) }}">
                             <div class="font-semibold flex items-center gap-2">
