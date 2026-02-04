@@ -1,25 +1,22 @@
 <?php
 
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-$appPath = __DIR__ . '/app/';
-
-// maintenance
-if (file_exists($maintenance = $appPath . 'storage/framework/maintenance.php')) {
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;
 }
 
-require $appPath . 'vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
-$app = require_once $appPath . 'bootstrap/app.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-/**
- * IMPORTANT:
- * Tell Laravel where the "public" directory is.
- * Because our webroot is domain root, but Laravel's public folder lives in /app/public.
- */
-$app->usePublicPath($appPath . 'public');
+$kernel = $app->make(Kernel::class);
 
-$app->handleRequest(Request::capture());
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
+
+$kernel->terminate($request, $response);
